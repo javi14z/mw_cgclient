@@ -1,0 +1,89 @@
+#c_ip:1 s_ip:2 s_port:3 time_init:4 time_fin:5 petition_url:6 mimeType:7 url_dom:8 c_port:9
+172.16.1.168 52.94.226.87 443 1542018302694544 1542018363434173 http://goodreads.com/ text/html https://www.goodreads.com/
+172.16.1.168 54.192.61.123 443 1542018302694544 1542018363434173 http://goodreads.com/ text/css https://s.gr-assets.com/assets/goodreads-efed47e87293106eb8cfe1bd696f7b64.css 48088
+172.16.1.168 54.192.61.123 443 1542018302694544 1542018363434173 http://goodreads.com/ text/css https://s.gr-assets.com/assets/gr/pages/home/signed_out_hp-9acceab0f5ddd5d6537db70100c31ecd.css
+172.16.1.168 54.192.61.123 443 1542018302694544 1542018363434173 http://goodreads.com/ text/css https://s.gr-assets.com/assets/common_images-67dd60a681af04727cf7d18f5c5ba498.css
+172.16.1.168 54.192.61.123 443 1542018302694544 1542018363434173 http://goodreads.com/ text/css https://s.gr-assets.com/assets/shared_all_surfaces/pages/home/signed_out_hp-927819e9c92716a88151e7b65d5bed35.css
+172.16.1.168 54.192.61.123 443 1542018302694544 1542018363434173 http://goodreads.com/ application/x-javascript https://s.gr-assets.com/assets/webfontloader-d12a76562d1fabc96ea2ca165a5f46ae.js
+172.16.1.168 54.192.61.123 443 1542018302694544 1542018363434173 http://goodreads.com/ application/x-javascript https://s.gr-assets.com/assets/react_client_side/external_dependencies-54e6bb78e5.js
+172.16.1.168 54.192.61.123 443 1542018302694544 1542018363434173 http://goodreads.com/ application/x-javascript https://s.gr-assets.com/assets/react_client_side/site_header-ff852729bb.js
+172.16.1.168 54.192.61.123 443 1542018302694544 1542018363434173 http://goodreads.com/ application/x-javascript https://s.gr-assets.com/assets/react_ujs-4ccbf2988911e470c05b12f779088c68.js
+172.16.1.168 54.192.61.123 443 1542018302694544 1542018363434173 http://goodreads.com/ application/x-javascript https://s.gr-assets.com/assets/application-3e0b55a29c3216c5ce499ef9929c966e.js
+172.16.1.168 54.192.61.123 443 1542018302694544 1542018363434173 http://goodreads.com/ application/x-javascript https://s.gr-assets.com/assets/desktop/libraries-1c2883cf9caed935dcb88219fd720a9c.js
+172.16.1.168 54.192.61.123 443 1542018302694544 1542018363434173 http://goodreads.com/ image/png https://s.gr-assets.com/assets/home/header_logo-8d96d7078a3d63f9f31d92282fd67cf4.png
+172.16.1.168 54.192.61.123 443 1542018302694544 1542018363434173 http://goodreads.com/ image/png https://s.gr-assets.com/assets/home/homepage_signin_facebook-99e862a1d6c0b1f359c0332006e16e10.png
+172.16.1.168 54.192.61.123 443 1542018302694544 1542018363434173 http://goodreads.com/ text/css https://s.gr-assets.com/assets/gr/fonts-e256f84093cc13b27f5b82343398031a.css
+172.16.1.168 54.192.61.123 443 1542018302694544 1542018363434173 http://goodreads.com/ image/png https://s.gr-assets.com/assets/home/homepage_signin_twitter-9922ba9506d10862d03a558f4424c026.png
+172.16.1.168 54.192.61.123 443 1542018302694544 1542018363434173 http://goodreads.com/ image/png https://s.gr-assets.com/assets/home/homepage_signin_google-4b119f254f4e8224b9a35ecb5f4fac55.png
+172.16.1.168 216.58.210.130 443 1542018302694544 1542018363434173 http://goodreads.com/ text/javascript https://www.googletagservices.com/tag/js/gpt.js 42200
+172.16.1.168 192.229.233.25 443 1542018302694544 1542018363434173 http://goodreads.com/ application/javascript https://platform.twitter.com/widgets.js 51532
+172.16.1.168 54.192.61.123 443 1542018302694544 1542018363434173 http://goodreads.com/ application/octet-stream https://s.gr-assets.com/assets/lato/LatoLatin-Regular-1c0bbd257c304f0c439ffca5188bf64d.woff2 48118
+172.16.1.168 54.192.61.123 443 1542018302694544 1542018363434173 http://goodreads.com/ application/octet-stream https://s.gr-assets.com/assets/lato/LatoLatin-Bold-68ef13b1d5b140f6454beaf8620f0d00.woff2
+172.16.1.168 192.229.233.25 443 1542018302694544 1542018363434173 http://goodreads.com/ text/html https://platform.twitter.com/widgets/widget_iframe.6a4ed48f02c42484dcac7ad4945520ca.html?origin=https%3A%2F%2Fwww.goodreads.com&settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings 51532
+172.16.1.168 54.192.61.123 443 1542018302694544 1542018363434173 http://goodreads.com/ application/octet-stream https://s.gr-assets.com/assets/lato/LatoLatin-Italic-3c16c00fcdb07eb96a6bf4eefa26d1f9.woff2
+172.16.1.168 54.192.61.123 443 1542018302694544 1542018363434173 http://goodreads.com/ application/octet-stream https://s.gr-assets.com/assets/mw/merriweather-regular-gr-01abdd2b4e6be250f29285f7248e978d.woff2
+172.16.1.168 54.192.61.123 443 1542018302694544 1542018363434173 http://goodreads.com/ application/octet-stream https://s.gr-assets.com/assets/mw/merriweather-bold-gr-97a99a0fdb5f796fd06d1a1592c6b9fc.woff2
+172.16.1.168 54.192.61.123 443 1542018302694544 1542018363434173 http://goodreads.com/ application/octet-stream https://s.gr-assets.com/assets/mw/merriweather-italic-gr-09ea79839f9f0f72fe4d3e19f58d8e6a.woff2
+172.16.1.168 216.58.211.34 443 1542018302694544 1542018363434173 http://goodreads.com/ application/javascript https://adservice.google.com/adsid/integrator.js?domain=www.goodreads.com 35748
+172.16.1.168 205.251.242.64 443 1542018302694544 1542018363434173 http://goodreads.com/ text/javascript https://ads.goodreads.com/ad?p=logged_out_hp&uid=false&sid=osid.852829836cea5d8ad5c545bb50d0b2b4&gtargeting=1 42602
+172.16.1.168 54.192.61.123 443 1542018302694544 1542018363434173 http://goodreads.com/ image/png https://s.gr-assets.com/assets/home/homepage_signin_amazon-c6b72b6cb35e3c975a179cebad1e7ace.png
+172.16.1.168 54.192.61.123 443 1542018302694544 1542018363434173 http://goodreads.com/ image/png https://s.gr-assets.com/assets/award/2018/choice-logo-medium-dd0b4c754554214a31dc4016aa71f235.png
+172.16.1.168 54.192.61.123 443 1542018302694544 1542018363434173 http://goodreads.com/ image/png https://s.gr-assets.com/assets/home/discovery_arrow.png
+172.16.1.168 54.192.61.123 443 1542018302694544 1542018363434173 http://goodreads.com/ image/gif https://s.gr-assets.com/assets/loading-trans-ced157046184c3bc7c180ffbfc6825a4.gif
+172.16.1.168 54.192.61.123 443 1542018302694544 1542018363434173 http://goodreads.com/ image/png https://s.gr-assets.com/assets/layout/magnifying_glass-a2d7514d50bcee1a0061f1ece7821750.png
+172.16.1.168 54.192.61.123 443 1542018302694544 1542018363434173 http://goodreads.com/ image/gif https://s.gr-assets.com/assets/facebook/login_animation-085464711e6c1ed5ba287a2f40ba3343.gif
+172.16.1.168 54.192.61.123 443 1542018302694544 1542018363434173 http://goodreads.com/ image/png https://s.gr-assets.com/assets/award/2018/gca_signed_out_hp_masthead.png
+172.16.1.168 143.204.93.195 443 1542018302694544 1542018363434173 http://goodreads.com/ application/x-javascript https://images-na.ssl-images-amazon.com/images/G/01/csminstrumentation/ue-full-11e51f253e8ad9d145f4ed644b40f692._V1_.js 53892
+172.16.1.168 143.204.96.211 443 1542018302694544 1542018363434173 http://goodreads.com/ application/javascript https://c.amazon-adsystem.com/aax2/apstag.js 57520
+172.16.1.168 13.33.236.42 443 1542018302694544 1542018363434173 http://goodreads.com/ image/jpeg https://images.gr-assets.com/books/1522157426s/19063.jpg 56292
+172.16.1.168 13.33.236.42 443 1542018302694544 1542018363434173 http://goodreads.com/ image/jpeg https://images.gr-assets.com/books/1346100365s/4667024.jpg
+172.16.1.168 13.33.236.42 443 1542018302694544 1542018363434173 http://goodreads.com/ image/jpeg https://images.gr-assets.com/books/1490792785s/2654.jpg
+172.16.1.168 13.33.236.42 443 1542018302694544 1542018363434173 http://goodreads.com/ image/jpeg https://images.gr-assets.com/books/1527091700s/960.jpg
+172.16.1.168 13.33.236.42 443 1542018302694544 1542018363434173 http://goodreads.com/ image/jpeg https://images.gr-assets.com/books/1391120695s/16299.jpg
+172.16.1.168 13.33.236.42 443 1542018302694544 1542018363434173 http://goodreads.com/ image/jpeg https://images.gr-assets.com/books/1494428973s/43641.jpg
+172.16.1.168 13.33.236.42 443 1542018302694544 1542018363434173 http://goodreads.com/ image/jpeg https://images.gr-assets.com/books/1348990566s/5470.jpg
+172.16.1.168 13.33.236.42 443 1542018302694544 1542018363434173 http://goodreads.com/ image/jpeg https://images.gr-assets.com/books/1386605169s/17899948.jpg
+172.16.1.168 13.33.236.42 443 1542018302694544 1542018363434173 http://goodreads.com/ image/jpeg https://images.gr-assets.com/books/1490528560s/4671.jpg
+172.16.1.168 13.33.236.42 443 1542018302694544 1542018363434173 http://goodreads.com/ image/jpeg https://images.gr-assets.com/books/1474154022s/3.jpg
+172.16.1.168 13.33.236.42 443 1542018302694544 1542018363434173 http://goodreads.com/ image/jpeg https://images.gr-assets.com/books/1484565687s/77203.jpg
+172.16.1.168 13.33.236.42 443 1542018302694544 1542018363434173 http://goodreads.com/ image/jpeg https://images.gr-assets.com/books/1327868566s/2429135.jpg
+172.16.1.168 13.33.236.42 443 1542018302694544 1542018363434173 http://goodreads.com/ image/jpeg https://images.gr-assets.com/books/1484976828s/33958478.jpg
+172.16.1.168 13.33.236.42 443 1542018302694544 1542018363434173 http://goodreads.com/ image/jpeg https://images.gr-assets.com/books/1524034729s/39886303.jpg
+172.16.1.168 13.33.236.42 443 1542018302694544 1542018363434173 http://goodreads.com/ image/jpeg https://images.gr-assets.com/books/1348322381m/3450744.jpg
+172.16.1.168 13.33.236.42 443 1542018302694544 1542018363434173 http://goodreads.com/ image/jpeg https://images.gr-assets.com/books/1320428955m/2776527.jpg
+172.16.1.168 13.33.236.42 443 1542018302694544 1542018363434173 http://goodreads.com/ image/jpeg https://images.gr-assets.com/books/1255573980m/1713426.jpg
+172.16.1.168 13.33.236.42 443 1542018302694544 1542018363434173 http://goodreads.com/ image/jpeg https://images.gr-assets.com/books/1479863624m/1618.jpg
+172.16.1.168 13.33.236.42 443 1542018302694544 1542018363434173 http://goodreads.com/ image/jpeg https://images.gr-assets.com/books/1442375726m/7366.jpg
+172.16.1.168 13.33.236.42 443 1542018302694544 1542018363434173 http://goodreads.com/ image/jpeg https://images.gr-assets.com/books/1317793965m/11468377.jpg
+172.16.1.168 143.204.96.211 443 1542018302694544 1542018363434173 http://goodreads.com/ application/javascript https://c.amazon-adsystem.com/bao-csm/aps-comm/aps_csm.js 57538
+172.16.1.168 13.33.236.42 443 1542018302694544 1542018363434173 http://goodreads.com/ image/jpeg https://images.gr-assets.com/books/1348264535m/4386485.jpg
+172.16.1.168 13.33.236.42 443 1542018302694544 1542018363434173 http://goodreads.com/ image/jpeg https://images.gr-assets.com/books/1369453733m/6953508.jpg
+172.16.1.168 13.33.236.42 443 1542018302694544 1542018363434173 http://goodreads.com/ image/jpeg https://images.gr-assets.com/books/1348810069m/325779.jpg
+172.16.1.168 13.33.236.42 443 1542018302694544 1542018363434173 http://goodreads.com/ image/jpeg https://images.gr-assets.com/authors/1193930952p2/61105.jpg
+172.16.1.168 13.33.236.42 443 1542018302694544 1542018363434173 http://goodreads.com/ image/jpeg https://images.gr-assets.com/quotes/1511992603p2/8630.jpg
+172.16.1.168 13.33.236.42 443 1542018302694544 1542018363434173 http://goodreads.com/ image/jpeg https://images.gr-assets.com/authors/1521044377p2/3565.jpg
+172.16.1.168 13.33.236.42 443 1542018302694544 1542018363434173 http://goodreads.com/ image/jpeg https://images.gr-assets.com/authors/1429114964p2/9810.jpg
+172.16.1.168 13.33.236.42 443 1542018302694544 1542018363434173 http://goodreads.com/ image/jpeg https://images.gr-assets.com/authors/1315160559p2/22302.jpg
+172.16.1.168 13.33.236.42 443 1542018302694544 1542018363434173 http://goodreads.com/ image/jpeg https://images.gr-assets.com/authors/1331977133p2/5768330.jpg
+172.16.1.168 13.33.236.42 443 1542018302694544 1542018363434173 http://goodreads.com/ image/jpeg https://images.gr-assets.com/authors/1197881416p2/13755.jpg
+172.16.1.168 13.33.236.42 443 1542018302694544 1542018363434173 http://goodreads.com/ image/jpeg https://images.gr-assets.com/authors/1282396130p2/1744830.jpg
+172.16.1.168 13.33.236.42 443 1542018302694544 1542018363434173 http://goodreads.com/ image/jpeg https://images.gr-assets.com/authors/1198551937p2/259666.jpg
+172.16.1.168 13.33.236.42 443 1542018302694544 1542018363434173 http://goodreads.com/ image/jpeg https://images.gr-assets.com/authors/1356810912p2/5810891.jpg
+172.16.1.168 13.33.236.42 443 1542018302694544 1542018363434173 http://goodreads.com/ image/jpeg https://images.gr-assets.com/authors/1510435123p2/1077326.jpg
+172.16.1.168 13.33.236.42 443 1542018302694544 1542018363434173 http://goodreads.com/ image/jpeg https://images.gr-assets.com/authors/1506091612p2/957894.jpg
+172.16.1.168 31.13.83.4 443 1542018302694544 1542018363434173 http://goodreads.com/ application/x-javascript https://connect.facebook.net/en_US/sdk.js 47466
+172.16.1.168 13.33.236.42 443 1542018302694544 1542018363434173 http://goodreads.com/ image/jpeg https://images.gr-assets.com/quotes/1387503187p2/10554.jpg
+172.16.1.168 13.33.236.42 443 1542018302694544 1542018363434173 http://goodreads.com/ image/jpeg https://images.gr-assets.com/authors/1536173756p2/44566.jpg
+172.16.1.168 13.33.236.42 443 1542018302694544 1542018363434173 http://goodreads.com/ image/jpeg https://images.gr-assets.com/authors/1322103868p2/1244.jpg
+172.16.1.168 13.33.236.42 443 1542018302694544 1542018363434173 http://goodreads.com/ image/jpeg https://images.gr-assets.com/authors/1216826209p2/114059.jpg
+172.16.1.168 13.33.236.42 443 1542018302694544 1542018363434173 http://goodreads.com/ image/jpeg https://images.gr-assets.com/authors/1379017377p2/3503.jpg
+172.16.1.168 13.33.236.42 443 1542018302694544 1542018363434173 http://goodreads.com/ image/jpeg https://images.gr-assets.com/authors/1183232004p2/7715.jpg
+172.16.1.168 35.177.2.75 443 1542018302694544 1542018363434173 http://goodreads.com/ application/x-javascript https://secure.quantserve.com/aquant.js?a=p-0dUe_kJAjvkoY 49962
+172.16.1.168 31.13.75.12 443 1542018302694544 1542018363434173 http://goodreads.com/ text/html https://staticxx.facebook.com/connect/xd_arbiter/r/__Bz3h5RzMx.js?version=42
+172.16.1.168 172.217.168.162 443 1542018302694544 1542018363434173 http://goodreads.com/ application/javascript https://adservice.google.es/adsid/integrator.js?domain=www.goodreads.com 36144
+172.16.1.168 192.229.233.25 443 1542018302694544 1542018363434173 http://goodreads.com/ text/html https://platform.twitter.com/jot.html
+172.16.1.168 52.85.51.101 443 1542018302694544 1542018363434173 http://goodreads.com/ application/x-javascript https://rules.quantcount.com/rules-p-0dUe_kJAjvkoY.js 43690
+172.16.1.168 23.38.19.203 443 1542018302694544 1542018363434173 http://goodreads.com/ application/x-javascript https://sb.scorecardresearch.com/beacon.js 41344
+172.16.1.168 23.38.19.203 443 1542018302694544 1542018363434173 http://goodreads.com/ text/plain https://sb.scorecardresearch.com/b2?c1=2&c2=6035830&c3=&c4=&c5=&c6=&c15=&ns__t=1542018353638&ns_c=UTF-8&cv=3.1&c8=Goodreads%20%E2%80%94%20Share%20book%20recommendations%20with%20your%20friends%2C%20join%20book%20clubs%2C%20answer%20trivia&c7=https%3A%2F%2Fwww.goodreads.com%2F&c9=
+172.16.1.168 18.195.36.226 443 1542018302694544 1542018363434173 http://goodreads.com/ image/gif https://pixel.quantserve.com/pixel;r=505490295;rf=0;uh=65ce955d6ae6;a=p-0dUe_kJAjvkoY;url=https%3A%2F%2Fwww.goodreads.com%2F;fpan=1;fpa=P0-132581959-1542018353430;ns=0;ce=1;qjs=1;qv=4c19192-20180628134937;cm=;ref=;je=0;sr=1024x768x24;enc=n;dst=1;et=1542018353403;tzo=-60;ogl=url.https%3A%2F%2Fwww%252Egoodreads%252Ecom%2F%2Cdescription.Discover%20and%20share%20books%20you%20love%20on%20Goodreads%252C%20the%20world's%20largest%20site%20for%20rea%2Ctitle.Goodreads%2Ctype.website%2Csite_name.Goodreads%2Cimage.https%3A%2F%2Fs%252Egr-assets%252Ecom%2Fassets%2Ffacebook%2Fgoodreads_wide-e23f6858b6bf20dcaf8493237 53436
+172.16.1.168 173.194.76.155 443 1542018302694544 1542018363434173 http://goodreads.com/ text/javascript https://stats.g.doubleclick.net/dc.js 58202

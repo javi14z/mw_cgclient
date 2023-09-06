@@ -1,0 +1,12 @@
+Model:Exponential
+Slots:1
+Duration:120
+VPNDuration:0
+Ratio:10
+ProtocolNum:6
+0-2(30)
+1-4(30)
+2-4(30)
+3-0(30)
+4-2(30)
+5-2(X)

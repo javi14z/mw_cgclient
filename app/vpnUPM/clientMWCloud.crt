@@ -1,0 +1,97 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number: 2 (0x2)
+    Signature Algorithm: sha256WithRSAEncryption
+        Issuer: C=ES, ST=Madrid, L=Madrid, O=UPM, OU=ONTIC, CN=CLOUD/name=Phoenix/emailAddress=me@myhost.mydomain
+        Validity
+            Not Before: Dec 20 11:41:22 2017 GMT
+            Not After : Dec 18 11:41:22 2027 GMT
+        Subject: C=ES, ST=Madrid, L=Madrid, O=UPM, OU=ONTIC, CN=clientMWCloud/name=clientMWCloud/emailAddress=me@myhost.mydomain
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                Public-Key: (2048 bit)
+                Modulus:
+                    00:ce:45:26:03:be:f6:09:a6:cf:40:cf:7b:aa:ad:
+                    83:9e:d7:6f:76:db:3e:3f:17:06:28:b2:fc:fe:5c:
+                    14:77:c5:ff:34:e3:88:6a:6c:77:77:ee:9c:86:65:
+                    c5:e6:60:16:ce:3a:7e:63:d5:3a:7d:09:7a:cb:01:
+                    de:eb:77:df:9b:3d:47:17:08:7a:87:77:7b:65:ca:
+                    8c:1d:53:bf:11:97:79:8c:da:ef:14:cd:22:96:af:
+                    1b:74:2d:e4:39:d7:7f:f3:03:7a:f1:a5:6e:b6:c2:
+                    a5:f2:84:ae:8e:76:1a:48:3b:e9:f3:18:24:50:05:
+                    47:22:de:12:02:de:ea:f9:51:06:9e:1f:34:c4:d4:
+                    c6:4a:1f:b8:42:4c:90:47:7a:b1:39:71:57:be:44:
+                    62:50:87:8a:a9:1c:f5:3a:9b:1c:a6:0e:d5:5d:e0:
+                    d3:0f:4b:f5:07:c4:48:ea:1f:01:8d:43:2e:e8:65:
+                    d0:ec:a6:0b:34:f6:94:a6:f4:86:68:8f:a8:67:be:
+                    64:91:ff:b0:2b:62:76:bb:10:2c:82:5a:b4:c1:36:
+                    fb:e7:02:26:5f:14:0d:2c:40:66:e0:08:43:26:eb:
+                    1d:66:0c:c7:f5:35:c2:d1:52:16:1c:14:3f:c8:0e:
+                    a0:24:2c:1e:ee:5b:f6:e8:b3:9a:d4:c9:d8:51:81:
+                    70:3d
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Basic Constraints: 
+                CA:FALSE
+            Netscape Comment: 
+                Easy-RSA Generated Certificate
+            X509v3 Subject Key Identifier: 
+                13:F4:32:F8:7E:F0:30:4B:1C:9D:FD:6C:12:B7:1C:1F:A2:70:3C:89
+            X509v3 Authority Key Identifier: 
+                keyid:2B:A6:46:B1:6D:2C:04:EF:1B:B6:99:AE:9D:89:EE:B8:AE:2F:07:08
+                DirName:/C=ES/ST=Madrid/L=Madrid/O=UPM/OU=ONTIC/CN=CLOUD/name=Phoenix/emailAddress=me@myhost.mydomain
+                serial:DB:8F:85:F2:8A:36:67:7B
+
+            X509v3 Extended Key Usage: 
+                TLS Web Client Authentication
+            X509v3 Key Usage: 
+                Digital Signature
+            X509v3 Subject Alternative Name: 
+                DNS:clien1
+    Signature Algorithm: sha256WithRSAEncryption
+         45:50:04:db:78:12:4f:82:3a:7c:3f:66:6c:bb:26:9d:58:a3:
+         bc:07:05:d5:03:32:9e:d8:7d:89:71:64:b8:55:99:c8:1a:69:
+         fb:c6:b5:4e:94:e3:4e:b6:3f:a8:b0:ab:3c:f3:70:a9:5d:d7:
+         23:0f:91:53:5f:be:c7:c0:20:fc:95:35:5e:1e:c8:6b:2c:18:
+         f0:c9:8f:05:7d:3f:69:88:06:22:de:8d:36:ba:22:1c:b6:a6:
+         f6:98:4a:fa:ee:8d:3b:fa:ea:44:7d:d2:d7:b4:d5:0a:37:80:
+         71:27:7e:e4:04:1b:55:29:84:3d:db:a4:d8:23:dc:df:38:d7:
+         3f:08:89:4f:d5:f2:a9:54:ad:1a:e6:3b:c0:b5:88:8b:e9:3d:
+         e2:fa:75:94:3b:68:be:e5:ed:d5:35:33:c5:27:9e:01:38:f3:
+         49:44:60:6e:3f:bd:49:cc:5c:fa:22:0d:ae:b8:92:e6:e7:87:
+         06:83:9e:8b:60:fc:f5:21:70:65:fc:d2:e9:a4:b4:4c:20:fd:
+         da:ee:c9:33:41:82:7e:e9:f0:cd:a5:47:75:56:d8:13:a0:3a:
+         fa:1f:66:2d:31:d1:1d:e2:d4:d4:cd:5a:2a:e6:d3:14:f2:97:
+         40:92:5d:da:8b:3b:71:c1:87:8a:47:1f:14:cf:8c:dd:17:e4:
+         5a:4e:e1:f5
+-----BEGIN CERTIFICATE-----
+MIIFDTCCA/WgAwIBAgIBAjANBgkqhkiG9w0BAQsFADCBkjELMAkGA1UEBhMCRVMx
+DzANBgNVBAgTBk1hZHJpZDEPMA0GA1UEBxMGTWFkcmlkMQwwCgYDVQQKEwNVUE0x
+DjAMBgNVBAsTBU9OVElDMQ4wDAYDVQQDEwVDTE9VRDEQMA4GA1UEKRMHUGhvZW5p
+eDEhMB8GCSqGSIb3DQEJARYSbWVAbXlob3N0Lm15ZG9tYWluMB4XDTE3MTIyMDEx
+NDEyMloXDTI3MTIxODExNDEyMlowgaAxCzAJBgNVBAYTAkVTMQ8wDQYDVQQIEwZN
+YWRyaWQxDzANBgNVBAcTBk1hZHJpZDEMMAoGA1UEChMDVVBNMQ4wDAYDVQQLEwVP
+TlRJQzEWMBQGA1UEAxMNY2xpZW50TVdDbG91ZDEWMBQGA1UEKRMNY2xpZW50TVdD
+bG91ZDEhMB8GCSqGSIb3DQEJARYSbWVAbXlob3N0Lm15ZG9tYWluMIIBIjANBgkq
+hkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAzkUmA772CabPQM97qq2Dntdvdts+PxcG
+KLL8/lwUd8X/NOOIamx3d+6chmXF5mAWzjp+Y9U6fQl6ywHe63ffmz1HFwh6h3d7
+ZcqMHVO/EZd5jNrvFM0ilq8bdC3kOdd/8wN68aVutsKl8oSujnYaSDvp8xgkUAVH
+It4SAt7q+VEGnh80xNTGSh+4QkyQR3qxOXFXvkRiUIeKqRz1Opscpg7VXeDTD0v1
+B8RI6h8BjUMu6GXQ7KYLNPaUpvSGaI+oZ75kkf+wK2J2uxAsglq0wTb75wImXxQN
+LEBm4AhDJusdZgzH9TXC0VIWHBQ/yA6gJCwe7lv26LOa1MnYUYFwPQIDAQABo4IB
+XDCCAVgwCQYDVR0TBAIwADAtBglghkgBhvhCAQ0EIBYeRWFzeS1SU0EgR2VuZXJh
+dGVkIENlcnRpZmljYXRlMB0GA1UdDgQWBBQT9DL4fvAwSxyd/WwStxwfonA8iTCB
+xwYDVR0jBIG/MIG8gBQrpkaxbSwE7xu2ma6die64ri8HCKGBmKSBlTCBkjELMAkG
+A1UEBhMCRVMxDzANBgNVBAgTBk1hZHJpZDEPMA0GA1UEBxMGTWFkcmlkMQwwCgYD
+VQQKEwNVUE0xDjAMBgNVBAsTBU9OVElDMQ4wDAYDVQQDEwVDTE9VRDEQMA4GA1UE
+KRMHUGhvZW5peDEhMB8GCSqGSIb3DQEJARYSbWVAbXlob3N0Lm15ZG9tYWluggkA
+24+F8oo2Z3swEwYDVR0lBAwwCgYIKwYBBQUHAwIwCwYDVR0PBAQDAgeAMBEGA1Ud
+EQQKMAiCBmNsaWVuMTANBgkqhkiG9w0BAQsFAAOCAQEARVAE23gST4I6fD9mbLsm
+nVijvAcF1QMynth9iXFkuFWZyBpp+8a1TpTjTrY/qLCrPPNwqV3XIw+RU1++x8Ag
+/JU1Xh7IaywY8MmPBX0/aYgGIt6NNroiHLam9phK+u6NO/rqRH3S17TVCjeAcSd+
+5AQbVSmEPduk2CPc3zjXPwiJT9XyqVStGuY7wLWIi+k94vp1lDtovuXt1TUzxSee
+ATjzSURgbj+9Scxc+iINrriS5ueHBoOei2D89SFwZfzS6aS0TCD92u7JM0GCfunw
+zaVHdVbYE6A6+h9mLTHRHeLU1M1aKubTFPKXQJJd2os7ccGHikcfFM+M3RfkWk7h
+9Q==
+-----END CERTIFICATE-----

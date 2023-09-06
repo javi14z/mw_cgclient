@@ -1,0 +1,4 @@
+#c_ip:1 s_ip:2 s_port:3 time_init:4 time_fin:5 petition_url:6 mimeType:7 url_dom:8 c_port:9
+172.16.1.168 204.79.197.200 443 1542018659820734 154201868300692 http://bing.com/ text/html https://www.bing.com/?toWww=1&redig=42A4618475E145FF88438700E5CDA4F2
+172.16.1.168 204.79.197.200 443 1542018659820734 154201868300692 http://bing.com/ image/png https://www.bing.com/sa/simg/hpc26.png
+172.16.1.168 204.79.197.200 443 1542018659820734 154201868300692 http://bing.com/ image/jpeg https://www.bing.com/az/hprichbg/rb/HamersleyGorge_ROW8436672963_1920x1080.jpg
