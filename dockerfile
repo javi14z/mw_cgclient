@@ -4,16 +4,15 @@ FROM ubuntu:18.04
 RUN apt-get update && \
     apt-get install -y python sudo vim net-tools openssh-server vlc bc chromium-browser xvfb curl openvpn supervisor
 
-# Modificamos ssh para que podamos hacer login con contraseña
-RUN echo 'PasswordAuthentication yes' >> /etc/ssh/sshd_config
 
-RUN service ssh start
+# Creamos el nuevo usuario con su contraseña para la conexion ssh
+RUN useradd -m -s /bin/bash -g root -G sudo -u 1000 cognet  && \
+echo "cognet:supercognet" | chpasswd
 
-# Creamos el nuevo usuario con su contraseña 
-RUN useradd -m cognet && echo "cognet:supercognet" | chpasswd
 
 #Instalación de DropBox
 RUN cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
+
 
 # Establece el directorio de trabajo dentro del contenedor
 WORKDIR /home/cognet
