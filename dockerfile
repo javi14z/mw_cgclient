@@ -2,7 +2,7 @@ FROM ubuntu:18.04
 
 # Instalación de paquetes necesarios
 RUN apt-get update && \
-    apt-get install -y python vim openssh-server bc chromium-browser xvfb curl openvpn supervisor
+    apt-get install -y python sudo vim net-tools openssh-server vlc bc chromium-browser xvfb curl openvpn supervisor
 
 # Modificamos ssh para que podamos hacer login con contraseña
 RUN echo 'PasswordAuthentication yes' >> /etc/ssh/sshd_config
