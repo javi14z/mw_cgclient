@@ -25,7 +25,8 @@ COPY /app .
 # Agrega configuración para supervisord
 COPY supervisord/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 # Inicia supervisord
-CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
+CMD ["/usr/bin/supervisord", "-n", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
+
 
 # Permite que el contenedor se quede en ejecución
 #CMD [ "tail", "-f", "/dev/null" ]
