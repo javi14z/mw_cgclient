@@ -9,6 +9,8 @@ RUN apt-get update && \
 RUN useradd -m -s /bin/bash -g root -G sudo -u 1000 cognet  && \
 echo "cognet:supercognet" | chpasswd
 
+RUN service ssh start
+
 
 #Instalación de DropBox
 RUN cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
@@ -23,7 +25,7 @@ COPY /app .
 
 # Agrega configuración para supervisord
 COPY supervisord/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
-# Inicia supervisord
+# Inicia supervisord en primer plano para evitar cierre de contenedor
 CMD ["/usr/bin/supervisord", "-n", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
 
 

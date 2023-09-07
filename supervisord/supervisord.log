@@ -1,4 +1,0 @@
-2023-08-17 08:04:56,380 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
-2023-08-17 08:04:56,408 INFO supervisord started with pid 1
-2023-08-17 08:04:57,417 INFO spawned: 'sshd' with pid 7
-2023-08-17 08:04:58,424 INFO success: sshd entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)

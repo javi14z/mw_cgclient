@@ -1,20 +1,23 @@
 **Docker commands:**
 
-1. docker compose up --build -d
-2. Stop all containers with: docker stop $(docker ps -q)
+1. Lift the container with:
+```
+docker compose up --build -d
+```
+2. Stop all containers with: 
+```
+docker stop $(docker ps -q)
+```
 
+**Conexion ssh**
 
-**Next goals:**
+Port 2222 of the host mapped to 22 of the container:
+```
+ssh -p 2222 cognet@localhost
+```
 
-- Enable ssh conexion (done)
-- Dedicated container exclusively for dropbox service (done)
-- Generate traffic
 
 **Problemas:**
-
-Cuando me conecto por ssh no se ejecuta bash
-
-CGDropbox - El cliente de dropbox no es compatible de manera directa con alpine. Se puede solucionar utilizando un contenedor exclusivo para correr el servicio de Dropbox en Ubuntu y el resto de servicios en Alpine.
 
 CGOwncloud.sh - error linea 104 (no está conectado al servidor interno)
 
@@ -27,4 +30,9 @@ CGApacherequets.sh - index fail tanto en mv como cointainer
 CGTest17.sh - linea 101 owncloud (comando)
 
 CGTest18.sh - eror linea owncloud (comando) y usleep
+
+**Problemas solucionados:**
+
+CGDropbox - El cliente de dropbox no es compatible de manera directa con alpine. Se puede solucionar utilizando un contenedor exclusivo para correr el servicio de Dropbox en Ubuntu y el resto de servicios en Alpine. Solución: mover todo a ubuntu
+
 
