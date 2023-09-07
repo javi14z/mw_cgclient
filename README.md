@@ -1,4 +1,4 @@
-**Docker commands:**
+**Docker COMMANDS:**
 
 1. Lift the container with:
 ```
@@ -9,7 +9,7 @@ docker compose up --build -d
 docker stop $(docker ps -q)
 ```
 
-**Conexion ssh**
+**SSH CONEXION:**
 
 Port 2222 of the host mapped to 22 of the container:
 ```
