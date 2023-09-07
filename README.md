@@ -9,6 +9,8 @@ docker compose up --build -d
 docker stop $(docker ps -q)
 ```
 
+
+
 **SSH CONEXION:**
 
 Port 2222 of the host mapped to 22 of the container:
