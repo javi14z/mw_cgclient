@@ -1,15 +1,16 @@
 FROM ubuntu:18.04
 
-# Instalación de paquetes necesarios
+# Instalación de paquetes necesarios, limpieza de cache y archivos temporales
 RUN apt-get update && \
-    apt-get install -y python sudo vim net-tools openssh-server vlc bc chromium-browser xvfb curl openvpn supervisor
-
+    apt-get install -y python sudo vim net-tools openssh-server vlc bc chromium-browser \
+    xvfb curl openvpn supervisor && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 # Creamos el nuevo usuario con su contraseña y lanzamos el servicio ssh
 RUN useradd -m -s /bin/bash -g root -G sudo -u 1000 cognet  && \
-echo "cognet:supercognet" | chpasswd 
-#Iniciamos el servicio ssh
-RUN service ssh start
+echo "cognet:supercognet" | chpasswd && \
+service ssh start
 
 
 # Establece el directorio de trabajo dentro del contenedor
