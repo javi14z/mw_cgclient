@@ -17,7 +17,7 @@ FROM ubuntu:18.04
 # Instalación de paquetes necesarios, limpieza de cache y archivos temporales
 RUN apt-get update && \
     apt-get install -y python sudo vim net-tools openssh-server vlc bc chromium-browser \
-    xvfb curl openvpn supervisor && \
+    xvfb curl openvpn supervisor python-pip && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
@@ -26,6 +26,8 @@ RUN useradd -m -s /bin/bash -g root -G sudo -u 1000 cognet  && \
 echo "cognet:supercognet" | chpasswd && \
 service ssh start
 
+#Instalamos selenium
+RUN pip install selenium
 
 # Establece el directorio de trabajo dentro del contenedor
 WORKDIR /home/cognet
