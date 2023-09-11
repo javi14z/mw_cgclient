@@ -16,8 +16,8 @@ FROM ubuntu:18.04
 
 # Instalación de paquetes necesarios, limpieza de cache y archivos temporales
 RUN apt-get update && \
-    apt-get install -y python3 sudo vim net-tools openssh-server vlc bc chromium-browser \
-    xvfb curl openvpn supervisor python3-pip && \
+    apt-get install -y python3 sudo vim net-tools openssh-server vlc bc chromium-browser chromium-chromedriver\
+    curl openvpn supervisor python3-pip && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
