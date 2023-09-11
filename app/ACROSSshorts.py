@@ -2,7 +2,13 @@ from selenium import webdriver
 import time
 import random
 def simulate_cheetah_flow():
-    driver = webdriver.Chrome(executable_path='/usr/bin/chromium-browser') # Use the appropriate driver
+    chrome_options = webdriver.ChromeOptions()
+    chrome_options.binary_location = '/usr/bin/chromium-browser'
+    chrome_options.add_argument('--headless')  # Opcional: para ejecución sin cabeza
+    chrome_options.add_argument('--no-sandbox')
+    chrome_options.add_argument('--disable-dev-shm-usage')
+
+    driver = webdriver.Chrome('/usr/lib/chromium-browser/chromedriver', options=chrome_options)
     driver.get("https://www.youtube.com/shorts")
     
     while True:
