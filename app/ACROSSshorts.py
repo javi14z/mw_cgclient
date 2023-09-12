@@ -3,7 +3,7 @@ import time
 import random
 def simulate_cheetah_flow():
 
-    driver = webdriver.Chrome('/usr/bin/chromium-browser')
+    driver = webdriver.Firefox(executable_path="/root/geckodriver")
     driver.get("https://www.youtube.com/shorts")
     
     while True:
