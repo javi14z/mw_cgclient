@@ -2,11 +2,21 @@ version: '3.9'
 services:
   cgclient:
     build:
-      context: .
+      context: ./mw_cgclient
       dockerfile: dockerfile
     ports:
       - "2222:22"
     # volumes:
     #   - ./app:/home/cognet
     image: cgclient:last
+  cgserver:
+    build:
+      context: ./mw_cgserver
+      dockerfile: dockerfile
+    ports:
+      - "2224:22"
+      - "8888:8888"
+    image: cgserver:last
+  
+
   
