@@ -12,14 +12,14 @@ docker stop $(docker ps -q)
 
 ## SSH CONEXION:
 
-**-cgclient:**
+**cgclient:**
 
 Port 2222 of the host mapped to 22 of the container:
 ```
 ssh -p 2222 cognet@localhost
 ```
 
-**-cgserver:**
+**cgserver:**
 
 Port 2224 of the host mapped to 22 of the container:
 ```
