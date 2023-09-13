@@ -1,24 +1,26 @@
 # Docker COMMANDS:
 
-1. Lift the container with:
+**Lift the container with:**
 ```
 docker compose up --build -d
 ```
-2. Stop all containers with: 
+**Stop all containers with:**
 ```
 docker stop $(docker ps -q)
 ```
 
 
-
 ## SSH CONEXION:
+
 **-cgclient:**
+
 Port 2222 of the host mapped to 22 of the container:
 ```
 ssh -p 2222 cognet@localhost
 ```
 
 **-cgserver:**
+
 Port 2224 of the host mapped to 22 of the container:
 ```
 ssh -p 2224 cognet@localhost
