@@ -33,8 +33,7 @@ CGTest17.sh - linea 101 owncloud (comando)
 
 CGTest18.sh - eror linea owncloud (comando) y usleep
 
-**Problemas solucionados:**
 
-CGDropbox - El cliente de dropbox no es compatible de manera directa con alpine. Se puede solucionar utilizando un contenedor exclusivo para correr el servicio de Dropbox en Ubuntu y el resto de servicios en Alpine. Solución: mover todo a ubuntu
+**Dudas:**
 
 
