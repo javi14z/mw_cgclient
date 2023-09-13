@@ -1,4 +1,4 @@
-#Docker COMMANDS:
+# Docker COMMANDS:
 
 1. Lift the container with:
 ```
@@ -11,7 +11,7 @@ docker stop $(docker ps -q)
 
 
 
-##SSH CONEXION:
+## SSH CONEXION:
 **-cgclient:**
 Port 2222 of the host mapped to 22 of the container:
 ```
@@ -25,7 +25,7 @@ ssh -p 2224 cognet@localhost
 ```
 
 
-##Problemas:
+## Problemas:
 
 CGOwncloud.sh - error linea 104 (no está conectado al servidor interno)
 
@@ -40,6 +40,6 @@ CGTest17.sh - linea 101 owncloud (comando)
 CGTest18.sh - eror linea owncloud (comando) y usleep
 
 
-##Dudas:
+## Dudas:
 
 
