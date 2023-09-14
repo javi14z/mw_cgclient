@@ -41,7 +41,7 @@ CGTest17.sh - linea 101 owncloud (comando)
 
 CGTest18.sh - eror linea owncloud (comando) y usleep
 
-No consigo enlazar el display para lanzar firefox por ssh
+No consigo enlazar el display (X11) para lanzar firefox por ssh
 
 
 ## Dudas:
