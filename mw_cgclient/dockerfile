@@ -26,7 +26,10 @@ RUN apt-get update && \
 # Creamos el nuevo usuario con su contraseña y lanzamos el servicio ssh
 RUN useradd -m -s /bin/bash -g root -G sudo -u 1000 cognet  && \
 echo "cognet:supercognet" | chpasswd && \
+#sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config && \
+#echo 'root:root' | chpasswd && \
 service ssh start
+
 
 #Configurar pantalla
 ENV DISPLAY=host.docker.internal:0.0
