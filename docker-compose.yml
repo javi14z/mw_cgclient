@@ -33,6 +33,7 @@ services:
       dockerfile: dockerfile
     ports:
       - "2228:22"
+      - "4433:4433"
     image: ddosserver:last
   
 
