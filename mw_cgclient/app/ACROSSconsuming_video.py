@@ -1,11 +1,21 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
 import time
 
 def simulate_user():
     driver = webdriver.Firefox(executable_path="/root/geckodriver") # Use the appropriate driver
-    driver.get("https://ia801802.us.archive.org/15/items/alexander-the-great-1997-part-1/Alexander%20The%20Great%20%281997%29%20Part%201.mp4")
+    # Open youtube
+    driver.get("https://www.youtube.com/watch?v=08O6kK5Cjek")
+
+    # Accept cookies
+    time.sleep(5)
+    agree_button_xpath = "//*[@id=\"content\"]/div[2]/div[6]/div[1]/ytd-button-renderer[2]/yt-button-shape/button/yt-touch-feedback-shape/div/div[2]"
+    agree_button = driver.find_element(By.XPATH, agree_button_xpath)
+    agree_button.click()
+
+    #Start video
+    time.sleep(5)
+    driver.find_element(By.TAG_NAME, 'body').send_keys("K")
 
     # Simulate the viewing
     time.sleep(3600)  # Let the video play for a while  
