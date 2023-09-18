@@ -26,6 +26,8 @@ Port 2224 of the host mapped to 22 of the container:
 ssh -p 2224 cognet@localhost
 ```
 
+## Supervisor:
+In the supervisord folder you can configure services to run automatically.
 
 ## Problemas:
 

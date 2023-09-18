@@ -9,6 +9,7 @@ services:
     # volumes:
     #   - ./app:/home/cognet
     image: cgclient:last
+
   cgserver:
     build:
       context: ./mw_cgserver
@@ -17,6 +18,22 @@ services:
       - "2224:22"
       - "8888:8888"
     image: cgserver:last
+
+  ddosclient:
+    build:
+      context: ./mw_ddosclient
+      dockerfile: dockerfile
+    ports:
+      - "2226:22"
+    image: ddosclient:last
+
+  ddosserver:
+    build:
+      context: ./mw_ddosserver
+      dockerfile: dockerfile
+    ports:
+      - "2228:22"
+    image: ddosserver:last
   
 
   
