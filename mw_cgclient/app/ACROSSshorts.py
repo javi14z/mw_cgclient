@@ -14,7 +14,7 @@ def simulate_cheetah_flow():
     agree_button.click()
     time.sleep(5)
 
-   
+    #Click on scroll short
     while True:
         next_button_xpath = "/html/body/ytd-app/div[1]/ytd-page-manager/ytd-shorts/div[4]/div[2]/ytd-button-renderer/yt-button-shape/button/yt-touch-feedback-shape/div/div[2]"
         next_button = driver.find_element(By.XPATH, next_button_xpath)
