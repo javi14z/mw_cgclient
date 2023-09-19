@@ -15,9 +15,10 @@ FROM ubuntu:18.04
 
 # Instalación de paquetes necesarios, limpieza de cache y archivos temporales
 RUN apt-get update && \
-    apt-get install -y python3 openssh-server supervisor sudo hping3 && \
+    apt-get install -y python3 openssh-server supervisor && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
+
 
 # Creamos el nuevo usuario con su contraseña y lanzamos el servicio ssh
 RUN useradd -m -s /bin/bash -g root -G sudo -u 1000 cognet  && \
@@ -35,9 +36,11 @@ COPY /app .
 COPY --from=build /usr/local/go /usr/local/go
 # Agrega configuración para supervisord
 COPY supervisord/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
-# Configura el PATH para todos los usuarios
-RUN echo 'PATH=$PATH:/usr/local/go/bin' >> /etc/environment
 
+# Configuramos el PATH para el usuario "cognet"
+RUN echo 'export PATH=$PATH:/usr/local/go/bin' >> /home/cognet/.bashrc && \
+# Configuramos el PATH para el usuario "root"
+echo 'export PATH=$PATH:/usr/local/go/bin' >> /root/.bashrc
 
 # Inicia supervisord en primer plano para evitar cierre de contenedor
 CMD ["/usr/bin/supervisord", "-n", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
