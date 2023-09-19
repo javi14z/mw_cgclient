@@ -1,3 +1,16 @@
+FROM ubuntu:18.04 AS build
+
+# Instalación de paquetes necesarios, limpieza de cache y archivos temporales
+RUN apt-get update && \
+    apt-get install -y  wget && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+WORKDIR /home/cognet
+
+RUN cd ~ && wget -O - "https://go.dev/dl/go1.21.1.linux-amd64.tar.gz" | tar xzf - -C /usr/local/ 
+
+
 FROM ubuntu:18.04
 
 # Instalación de paquetes necesarios, limpieza de cache y archivos temporales
@@ -6,7 +19,6 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-
 # Creamos el nuevo usuario con su contraseña y lanzamos el servicio ssh
 RUN useradd -m -s /bin/bash -g root -G sudo -u 1000 cognet  && \
 echo "cognet:supercognet" | chpasswd && \
@@ -14,12 +26,17 @@ echo "cognet:supercognet" | chpasswd && \
 #echo 'root:root' | chpasswd && \
 service ssh start
 
+
 # Establece el directorio de trabajo dentro del contenedor
 WORKDIR /home/cognet
 # Copia los archivos del directorio /app al directorio de trabajo del contenedor
 COPY /app .
+# Copia los archivos necesarios desde la etapa de construcción
+COPY --from=build /usr/local/go /usr/local/go
 # Agrega configuración para supervisord
 COPY supervisord/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+# Configura el PATH para todos los usuarios
+RUN echo 'PATH=$PATH:/usr/local/go/bin' >> /etc/environment
 
 
 # Inicia supervisord en primer plano para evitar cierre de contenedor

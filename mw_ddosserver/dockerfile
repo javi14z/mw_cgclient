@@ -14,6 +14,7 @@ echo "cognet:supercognet" | chpasswd && \
 #echo 'root:root' | chpasswd && \
 service ssh start
 
+
 # Establece el directorio de trabajo dentro del contenedor
 WORKDIR /home/cognet
 # Copia los archivos del directorio /app al directorio de trabajo del contenedor
