@@ -5,7 +5,7 @@ import time
 def simulate_user():
     driver = webdriver.Firefox(executable_path="/root/geckodriver") # Use the appropriate driver
     # Open youtube
-    driver.get("https://www.youtube.com/watch?v=08O6kK5Cjek")
+    driver.get("https://www.youtube.com/watch?v=-No-226O0tg")
 
     # Accept cookies
     time.sleep(5)
