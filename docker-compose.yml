@@ -5,7 +5,7 @@ services:
       context: ./mw_cgclient
       dockerfile: dockerfile
     ports:
-      - "2222:22"
+      - "2222:22" #ssh
     # volumes:
     #   - ./app:/home/cognet
     image: cgclient:last
@@ -15,8 +15,8 @@ services:
       context: ./mw_cgserver
       dockerfile: dockerfile
     ports:
-      - "2224:22"
-      - "8888:8888"
+      - "2224:22" #ssh
+      - "8888:8888" #cliente/servidor
     image: cgserver:last
 
   ddosclient:
@@ -24,7 +24,7 @@ services:
       context: ./mw_ddosclient
       dockerfile: dockerfile
     ports:
-      - "2226:22"
+      - "2226:22" #ssh
     image: ddosclient:last
 
   ddosserver:
@@ -32,8 +32,9 @@ services:
       context: ./mw_ddosserver
       dockerfile: dockerfile
     ports:
-      - "2228:22"
-      - "4433:4433"
+      - "2228:22" #ssh
+      - "4433:4433" #hping3
+      - "80:8080" #nginx
     image: ddosserver:last
   
 
