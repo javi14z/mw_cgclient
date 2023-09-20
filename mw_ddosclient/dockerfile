@@ -37,10 +37,14 @@ COPY --from=build /usr/local/go /usr/local/go
 # Agrega configuración para supervisord
 COPY supervisord/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
-# Configuramos el PATH para el usuario "cognet"
+
+# Configuramos el PATH para ejecutar go en esta etapa
+ENV PATH="/usr/local/go/bin:$PATH"
+# Configuramos el PATH para el usuario "cognet" e instalamos vegeta
 RUN echo 'export PATH=$PATH:/usr/local/go/bin' >> /home/cognet/.bashrc && \
-# Configuramos el PATH para el usuario "root"
-echo 'export PATH=$PATH:/usr/local/go/bin' >> /root/.bashrc
+go mod init vegeta_workspace && \
+go get -u github.com/tsenart/vegeta
+
 
 # Inicia supervisord en primer plano para evitar cierre de contenedor
 CMD ["/usr/bin/supervisord", "-n", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
