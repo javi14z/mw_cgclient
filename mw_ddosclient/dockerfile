@@ -2,20 +2,24 @@ FROM ubuntu:18.04 AS build
 
 # Instalación de paquetes necesarios, limpieza de cache y archivos temporales
 RUN apt-get update && \
-    apt-get install -y  wget && \
+    apt-get install -y wget git && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
 WORKDIR /root
 
-RUN cd ~ && wget -O - "https://github.com/tsenart/vegeta/releases/download/v12.11.0/vegeta_12.11.0_linux_amd64.tar.gz" | tar xzf - -C /usr/bin/ 
+RUN cd ~ && wget -O - "https://github.com/tsenart/vegeta/releases/download/v12.11.0/vegeta_12.11.0_linux_amd64.tar.gz" | tar xzf - -C /usr/bin/ && \
+git clone https://github.com/aiortc/aioquic
 
 
 FROM ubuntu:18.04
 
+ENV DEBIAN_FRONTEND=noninteractive
+
 # Instalación de paquetes necesarios, limpieza de cache y archivos temporales
 RUN apt-get update && \
-    apt-get install -y python3 openssh-server sudo supervisor hping3 && \
+    apt-get install -y python3 openssh-server sudo supervisor hping3 python3-pip libssl-dev && \
+    pip3 install asgiref dnslib httpbin starlette wsproto && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
@@ -34,14 +38,9 @@ WORKDIR /home/cognet
 COPY /app .
 # Copia los archivos necesarios desde la etapa de construcción
 COPY --from=build /usr/bin/vegeta /usr/bin/vegeta
+COPY --from=build /root/aioquic /home/cognet/aioquic
 # Agrega configuración para supervisord
 COPY supervisord/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
-
-
-# Configuramos el PATH para ejecutar go en esta etapa
-ENV PATH="/usr/local/go/bin:$PATH"
-# Configuramos el PATH para el usuario "cognet" e instalamos vegeta
-RUN echo 'export PATH=$PATH:/usr/local/go/bin' >> /home/cognet/.bashrc 
 
 
 # Inicia supervisord en primer plano para evitar cierre de contenedor
