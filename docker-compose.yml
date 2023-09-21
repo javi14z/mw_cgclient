@@ -34,7 +34,7 @@ services:
     ports:
       - "2228:22" #ssh
       - "4433:4433" #hping3
-      - "80:8080" #nginx
+      - "8080:8080" #nginx
     image: ddosserver:last
   
 

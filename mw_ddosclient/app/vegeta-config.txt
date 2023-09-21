@@ -1,2 +1,2 @@
-GET https://localhost
+GET https://ddosserver:8080
 Host: localhost
