@@ -8,7 +8,8 @@ RUN apt-get update && \
 
 WORKDIR /root
 
-RUN cd ~ && wget -O - "https://github.com/tsenart/vegeta/releases/download/v12.11.0/vegeta_12.11.0_linux_amd64.tar.gz" | tar xzf - -C /usr/bin/ 
+RUN cd ~ && wget -O - "https://github.com/tsenart/vegeta/releases/download/v12.11.0/vegeta_12.11.0_linux_amd64.tar.gz" | tar xzf - -C /usr/bin/ && \
+git clone https://github.com/aiortc/aioquic.git
 
 FROM ubuntu:18.04
 
