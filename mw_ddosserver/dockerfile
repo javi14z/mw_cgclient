@@ -2,7 +2,7 @@ FROM ubuntu:18.04
 
 # Instalación de paquetes necesarios, limpieza de cache y archivos temporales
 RUN apt-get update && \
-    apt-get install -y python3 openssh-server sudo supervisor nginx tcpdump && \
+    apt-get install -y python3 openssh-server sudo supervisor nginx tcpdump bind9 bind9utils bind9-doc && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
@@ -15,6 +15,9 @@ echo "cognet:supercognet" | chpasswd && \
 service ssh start
 
 
+# Modifica el archivo para agregar la opción "-4" a OPTIONS
+RUN sed -i 's/^OPTIONS="-u bind"$/OPTIONS="-u bind -4"/' /etc/default/bind9 
+
 # Establece el directorio de trabajo dentro del contenedor
 WORKDIR /home/cognet
 # Copia los archivos del directorio /app al directorio de trabajo del contenedor
@@ -23,6 +26,8 @@ COPY /app .
 COPY supervisord/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY nginx/nginx.conf /etc/nginx/nginx.conf
 COPY nginx/html /home/cognet/
+COPY bind9/conf/ /etc/bind/
+COPY bind9/zones /etc/bind/zones
 
 # Inicia supervisord en primer plano para evitar cierre de contenedor
 CMD ["/usr/bin/supervisord", "-n", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
