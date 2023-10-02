@@ -42,7 +42,12 @@ ssh -p 2228 cognet@localhost
 
 
 ## Supervisor:
-In the supervisord folder you can configure services to run automatically.
+In the supervisord folder you can configure services to run automatically (most of them are currently commented)
+
+
+## Xming (Dsiplay X11):
+For correct operation, install Xming (Windows)
+
 
 ## Problemas:
 
@@ -58,7 +63,6 @@ CGTest17.sh - linea 101 owncloud (comando)
 
 CGTest18.sh - eror linea owncloud (comando) y usleep
 
-No consigo enlazar el display (X11) para lanzar firefox por ssh
 
 
 ## Dudas:
