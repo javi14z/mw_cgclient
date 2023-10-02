@@ -9,6 +9,7 @@
 
 zone "milocal.com" IN {
     type master;
-    file ¨¨/etc/bind/zones/milocal.com.zone¨;
+    file "/etc/bind/zones/milocal.com.zone";
 };
+
 

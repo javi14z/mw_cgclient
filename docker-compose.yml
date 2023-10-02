@@ -35,6 +35,7 @@ services:
       - "2228:22" #ssh
       - "4433:4433" #hping3
       - "8080:8080" #nginx
+      - "53:53/udp" #bind9 (DNS)
     image: ddosserver:last
   
 
