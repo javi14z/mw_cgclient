@@ -2,5 +2,3 @@ zone "example.com" IN {
     type master;
     file "/etc/bind/zones/db.milocal.com";
 };
-
-
