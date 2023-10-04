@@ -46,7 +46,7 @@ import time
 import logging
 import os
 
-victim_ip = "cgserver"
+victim_ip = "ddosserver"
 # header lenght: 22 bytes
 
 class Scapy:
