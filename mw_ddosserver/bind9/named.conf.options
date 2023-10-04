@@ -10,6 +10,8 @@ options {
                 8.8.4.4;
         };
 
-	dnssec-validation auto;
+        # edns yes;  // Habilita EDNS
+        # max-udp-size 4096;  // Otras opciones de configuración aquí
+	dnssec-validation auto; 
 	listen-on-v6 { any; };
 };
