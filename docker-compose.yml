@@ -6,8 +6,8 @@ services:
       dockerfile: dockerfile
     ports:
       - "2222:22" #ssh
-    # volumes:
-    #   - ./app:/home/cognet
+    volumes:
+      - ./registro:/app/registro
     image: cgclient:last
 
   cgserver:
@@ -17,6 +17,8 @@ services:
     ports:
       - "2224:22" #ssh
       - "8888:8888" #cliente/servidor
+    volumes:
+      - ./registro:/app/registro
     image: cgserver:last
 
   ddosclient:
@@ -25,6 +27,8 @@ services:
       dockerfile: dockerfile
     ports:
       - "2226:22" #ssh
+    volumes:
+      - ./registro:/app/registro
     image: ddosclient:last
 
   ddosserver:
@@ -36,6 +40,8 @@ services:
       - "4433:4433" #hping3
       - "8080:8080" #nginx
       - "53:53/udp" #bind9 (DNS)
+    volumes:
+      - ./registro:/app/registro
     image: ddosserver:last
   
 

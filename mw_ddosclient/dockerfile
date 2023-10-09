@@ -18,7 +18,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 # Instalación de paquetes necesarios, limpieza de cache y archivos temporales
 RUN apt-get update && \
-    apt-get install -y python3 openssh-server sudo supervisor hping3 python3-pip dnsutils libssl-dev && \
+    apt-get install -y python3 openssh-server sudo supervisor hping3 python3-pip dnsutils libssl-dev tcpdump && \
     pip3 install scapy==2.4.0 asgiref dnslib httpbin starlette wsproto peewee donna25519 tqdm && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
