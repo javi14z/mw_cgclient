@@ -45,10 +45,6 @@ ssh -p 2228 cognet@localhost
 In the supervisord folder you can configure services to run automatically (most of them are currently commented)
 
 
-## Xming (Dsiplay X11):
-For correct operation, install Xming (Windows)
-
-
 ## Problemas:
 
 CGOwncloud.sh - error linea 104 (no está conectado al servidor interno)
