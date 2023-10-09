@@ -1,10 +1,14 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.firefox.options import Options
 import time
 import random
 def simulate_cheetah_flow():
 
-    driver = webdriver.Firefox(executable_path="/root/geckodriver")
+    options = Options()
+    options.headless = True
+
+    driver = webdriver.Firefox(executable_path="/root/geckodriver", options=options) # Use the appropriate driver
     driver.get("https://www.youtube.com/shorts")
 
     # Accept cookies

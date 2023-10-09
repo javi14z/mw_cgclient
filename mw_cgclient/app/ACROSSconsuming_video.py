@@ -1,9 +1,14 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.firefox.options import Options
 import time
 
 def simulate_user():
-    driver = webdriver.Firefox(executable_path="/root/geckodriver") # Use the appropriate driver
+
+    options = Options()
+    options.headless = True
+
+    driver = webdriver.Firefox(executable_path="/root/geckodriver", options=options) # Use the appropriate driver
     # Open youtube
     driver.get("https://www.youtube.com/watch?v=-No-226O0tg")
 
