@@ -9,9 +9,8 @@ options {
                 8.8.8.8;
                 8.8.4.4;
         };
-
-        # edns yes;  
-        # max-udp-size 4096; 
+ 
 	dnssec-validation auto; 
+        edns-udp-size 1232; 
 	listen-on-v6 { any; };
 };
