@@ -9,6 +9,7 @@ RUN apt-get update && \
 WORKDIR /root
 
 RUN cd ~ && wget -O - "https://github.com/tsenart/vegeta/releases/download/v12.11.0/vegeta_12.11.0_linux_amd64.tar.gz" | tar xzf - -C /usr/bin/ && \
+wget -O - "https://github.com/DNSCrypt/dnscrypt-proxy/releases/download/2.1.5/dnscrypt-proxy-linux_x86_64-2.1.5.tar.gz" | tar xzf - && \
 git clone https://github.com/aiortc/aioquic.git && \
 git clone https://github.com/nicovell3/DNSWaterTorture.git
 
@@ -18,8 +19,8 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 # Instalación de paquetes necesarios, limpieza de cache y archivos temporales
 RUN apt-get update && \
-    apt-get install -y python3 nano net-tools openssh-server sudo supervisor hping3 python3-pip dnsutils libssl-dev tcpdump golang && \
-    pip3 install scapy==2.4.0 asgiref dnslib httpbin starlette wsproto peewee donna25519 tqdm && \
+    apt-get install -y python3 nano net-tools openssh-server sudo supervisor hping3 python3-pip dnsutils libssl-dev tcpdump golang tmux && \
+    pip3 install scapy==2.4.0 asgiref dnslib httpbin starlette wsproto peewee donna25519 tqdm requests dnspython && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
@@ -41,6 +42,8 @@ COPY --from=build /usr/bin/vegeta /usr/bin/vegeta
 COPY --from=build /root /home/cognet
 # Agrega configuración para supervisord
 COPY supervisord/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+
+RUN systemctl disable systemd-resolved
 
 
 # Inicia supervisord en primer plano para evitar cierre de contenedor
