@@ -8,6 +8,11 @@ docker compose up --build -d
 ```
 docker stop $(docker ps -q)
 ```
+**Push to hub**
+```
+docker tag *:last javi14t/*:last
+docker push javi14t/*ddosserver*:last
+```
 
 
 ## SSH CONEXION:

@@ -13,4 +13,5 @@ options {
 	dnssec-validation auto; 
         edns-udp-size 1232; 
 	listen-on-v6 { any; };
+        #listen-on port 53 { 127.0.0.1; };
 };
