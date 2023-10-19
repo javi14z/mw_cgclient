@@ -43,7 +43,9 @@ COPY --from=build /root /home/cognet
 # Agrega configuración para supervisord
 COPY supervisord/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
-RUN systemctl disable systemd-resolved
+#Configurar el display
+ENV DISPLAY=host.docker.internal:0.0
+RUN echo 'X11Forwarding yes' >> /etc/ssh/sshd_config
 
 
 # Inicia supervisord en primer plano para evitar cierre de contenedor
