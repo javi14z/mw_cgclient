@@ -46,7 +46,14 @@ import time
 import logging
 import os
 
-victim_ip = "ddosserver"
+# Obtén la dirección IP del servidor desde la variable de entorno
+ddosserver_ip = os.getenv("ddosserver")
+
+if ddosserver_ip is None:
+    print("No se proporcionó una dirección IP para el servidor. Asegúrate de configurar la variable de entorno ddosserver. Ejecuta export ddosserver=¨ip¨")
+    exit()
+
+victim_ip = ddosserver_ip
 # header lenght: 22 bytes
 
 class Scapy:

@@ -1,9 +1,17 @@
 import socket
 import time
 import random
+import os
+
+# Obtén la dirección IP del servidor desde la variable de entorno
+cgserver_ip = os.getenv("cgserver")
+
+if cgserver_ip is None:
+    print("No se proporcionó una dirección IP para el servidor. Asegúrate de configurar la variable de entorno cgserver. Ejecuta export cgserver=¨ip¨")
+    exit()
 
 client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-client_socket.connect(("cgserver", 8888))
+client_socket.connect((cgserver_ip, 8888))
 
 response = client_socket.recv(1024)
 print(response.decode())
