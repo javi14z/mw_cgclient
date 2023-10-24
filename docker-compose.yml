@@ -9,6 +9,9 @@ services:
     volumes:
       - ./registro:/app/registro
     image: cgclient:last
+    environment:
+      - cgserver=cgserver
+
 
   cgserver:
     build:
@@ -30,6 +33,8 @@ services:
     volumes:
       - ./registro:/app/registro
     image: ddosclient:last
+    environment:
+      - ddosserver=ddosserver
 
   ddosserver:
     build:
