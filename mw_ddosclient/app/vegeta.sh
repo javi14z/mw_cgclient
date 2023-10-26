@@ -10,7 +10,7 @@ fi
 ddosserver_ip="$ddosserver"
 
 # Ejecuta la prueba de carga y guarda los resultados en results.bin
-(echo "GET https://ddosserver:8080" ; echo "Host: $ddosserver_ip") | vegeta attack -duration=10s | tee results.bin
+(echo "GET https://$ddosserver:8080" ; echo "Host: $ddosserver_ip") | vegeta attack -duration=10s | tee results.bin
 
 # Genera un informe JSON a partir de los resultados
 vegeta report -type=json results.bin > metrics.json
