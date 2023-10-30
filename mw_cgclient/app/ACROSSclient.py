@@ -2,13 +2,24 @@ import socket
 import time
 import random
 import os
+import sys
 
 # Obtén la dirección IP del servidor desde la variable de entorno
 cgserver_ip = os.getenv("cgserver")
 
 if cgserver_ip is None:
-    print("No se proporcionó una dirección IP para el servidor. Asegúrate de configurar la variable de entorno cgserver. Ejecuta export cgserver=¨ip¨")
-    exit()
+    print("An IP address was not provided for the server. Make sure to set the cgserver environment variable. Run export cgserver=¨ip¨")
+    exit(1)
+
+if len(sys.argv) != 2:
+    print("Usage: python3 ACROSSclient.py <multiplier>")
+    exit(1)
+
+try:
+    multiplier = int(sys.argv[1])
+except ValueError:
+    print("The argument value must be a valid integer.")
+    exit(1)
 
 client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 client_socket.connect((cgserver_ip, 8888))
@@ -16,7 +27,7 @@ client_socket.connect((cgserver_ip, 8888))
 response = client_socket.recv(1024)
 print(response.decode())
 
-multiplier = 10000  # Adjust the multiplier as needed
+
 print(f"multiplier set to: {multiplier}")
 
 while True:
