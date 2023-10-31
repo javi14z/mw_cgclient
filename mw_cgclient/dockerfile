@@ -2,7 +2,7 @@ FROM ubuntu:18.04 AS build
 
 # Instalación de paquetes necesarios, limpieza de cache y archivos temporales
 RUN apt-get update && \
-    apt-get install -y  wget && \
+    apt-get install -y  wget zip && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
@@ -10,16 +10,16 @@ WORKDIR /root
 
 #Instalación de DropBox --> https://www.dropbox.com/es_ES/install?os=lnx y de geckodriver
 RUN cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf - && \
-cd ~ && wget -O - "https://github.com/mozilla/geckodriver/releases/download/v0.30.0/geckodriver-v0.30.0-linux64.tar.gz" | tar xzf -
-
+cd ~ && wget -O - "https://github.com/mozilla/geckodriver/releases/download/v0.33.0/geckodriver-v0.33.0-linux64.tar.gz" | tar xzf - && \
+cd ~ && wget "https://chromedriver.storage.googleapis.com/112.0.5615.49/chromedriver_linux64.zip" && unzip chromedriver_linux64.zip
 
 FROM ubuntu:18.04
 
 # Instalación de paquetes necesarios, limpieza de cache y archivos temporales
 RUN apt-get update && \
-    apt-get install -y python3 nano sudo net-tools openssh-server vlc bc firefox curl openvpn supervisor python3-pip tcpdump \
-    iputils-ping iproute2 traceroute && \
-    pip3 install selenium && \
+    apt-get install -y python3 nano vim sudo net-tools openssh-server vlc bc firefox curl openvpn supervisor python3-pip tcpdump \
+    iputils-ping iproute2 traceroute chromium-browser && \
+    pip3 install selenium numpy && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
