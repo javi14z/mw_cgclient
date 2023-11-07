@@ -9,11 +9,11 @@ import os
 import numpy
 
 
-def simulate_user(duration, netlog_name):
+def simulate_user(video_url, duration, netlog_name):
 
     # Configuration
     options = Options()
-    options.add_argument('--headless')
+    options.add_argument('--headless') # Comment this line if you want to see interactive browser
     options.add_argument('--no-sandbox')
     options.add_argument('--disable-dev-shm-usage')
     options.add_argument('--log-net-log=' + netlog_name)
@@ -27,7 +27,7 @@ def simulate_user(duration, netlog_name):
     f"--log-path=/home/cognet/chrome_logs/yt_driver.{os.path.basename(netlog_name)}.log"]) # Use the appropriate driver
 
     # Open youtube
-    driver.get("https://www.youtube.com/watch?v=-No-226O0tg")
+    driver.get(video_url)
 
     # Accept cookies
     time.sleep(5)
@@ -104,13 +104,14 @@ def simulate_user(duration, netlog_name):
 netlog_name = str(os.getpid()) + "_" + str(numpy.float64(time.time()))
 
 
-if len(sys.argv) != 2:
-    print("Usage: python3 ACROSSconsuming_video.py <duration>")
+if len(sys.argv) != 3:
+    print("Usage: python3 ACROSSconsuming_video.py <YT_URL> <duration>")
     exit(1)
 
 try:
-    duration = int(sys.argv[1])
-    simulate_user(duration, netlog_name)
+    video_url = sys.argv[1]
+    duration = int(sys.argv[2])
+    simulate_user(video_url, duration, netlog_name)
 except ValueError:
     print("The argument value must be a valid integer.")
     exit(1)
