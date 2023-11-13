@@ -1,6 +1,0 @@
-Log 18-08-2023
-Interval, Hostname, IP, Protocol, Host, Initial_Time, End_time, URL, Result
-Slot 0 - Time 1692359326 ---------
-0, dfcca32179c5, 172.18.0.3, 1, 1, 0, 15.08549030600000000000, owncloud, [OK]
-0, dfcca32179c5, 172.18.0.3, 1, 1, 33.962, 46.39577332700000000000, owncloud, [OK]
-0, dfcca32179c5, 172.18.0.3, 1, 1, 67.924, 78.61566080400000000000, owncloud, [OK]

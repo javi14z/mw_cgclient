@@ -17,14 +17,16 @@ fi
 
 duration="$1"
 
+mkdir -p /home/cognet/logs/vegeta
+
 # Ejecuta la prueba de carga y guarda los resultados en results.bin
-(echo "GET https://$ddosserver:8080" ; echo "Host: $ddosserver_ip") | vegeta attack -duration="$duration"s | tee results.bin
+(echo "GET https://$ddosserver:8080" ; echo "Host: $ddosserver_ip") | vegeta attack -duration="$duration"s | tee /home/cognet/logs/vegeta/results.bin
 
 # Genera un informe JSON a partir de los resultados
-vegeta report -type=json results.bin > metrics.json
+vegeta report -type=json /home/cognet/logs/vegeta/results.bin > /home/cognet/logs/vegeta/metrics.json
 
 # Genera un gráfico HTML a partir de los resultados
-cat results.bin | vegeta plot > plot.html
+cat /home/cognet/logs/vegeta/results.bin | vegeta plot > /home/cognet/logs/vegeta/plot.html
 
 # Genera un informe de histograma a partir de los resultados
-cat results.bin | vegeta report -type="hist[0,100ms,200ms,300ms]"
+cat /home/cognet/logs/vegeta/results.bin | vegeta report -type="hist[0,100ms,200ms,300ms]" > /home/cognet/logs/vegeta/histogram.txt

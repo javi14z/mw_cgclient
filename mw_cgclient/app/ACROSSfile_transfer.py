@@ -2,7 +2,7 @@ import os
 import sys
 
 def simulate_wget_download(url, save_path):
-    command = f"wget {url} -O {save_path} -o /home/cognet/chrome_logs/file_transfer.log"
+    command = f"wget {url} -O {save_path} -o /home/cognet/logs/file_transfer.log"
     os.system(command)
 
 save_path = "file_transfer.mp4"

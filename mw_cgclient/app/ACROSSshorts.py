@@ -25,7 +25,7 @@ def simulate_cheetah_flow(duration, netlog_name):
     caps['pageLoadStrategy'] = 'normal'
 
     driver = webdriver.Chrome(executable_path="/root/chromedriver", options=options, desired_capabilities=caps, service_args=["--verbose", 
-    f"--log-path=/home/cognet/chrome_logs/short_driver.{os.path.basename(netlog_name)}.log"]) # Use the appropriate driver
+    f"--log-path=/home/cognet/logs/short_driver.{os.path.basename(netlog_name)}.log"]) # Use the appropriate driver
 
     driver.get("https://www.youtube.com/shorts")
 
@@ -46,7 +46,7 @@ def simulate_cheetah_flow(duration, netlog_name):
     log_performance = driver.get_log('performance')
 
     #Save log in .json
-    with open('/home/cognet/chrome_logs/netlog.' + netlog_name +'.json', 'w') as log_file:
+    with open('/home/cognet/logs/short_netlog.' + netlog_name +'.json', 'w') as log_file:
         for entry in log_performance:
             log_file.write(json.dumps(entry) + '\n')
 
