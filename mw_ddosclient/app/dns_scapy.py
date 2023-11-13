@@ -19,8 +19,8 @@ except ValueError:
     print("The argument value must be a valid integer.")
     exit(1)
 
-target_ip = "example.com" # Replace with the target IP address
-open_dns_resolver = ddosserver_ip # Replace with an open DNS resolver IP
+target_ip = ddosserver_ip  # Replace with the target IP address
+open_dns_resolver = ddosserver_ip# Replace with an open DNS resolver IP
 
 
 
