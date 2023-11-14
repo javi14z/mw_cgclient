@@ -13,11 +13,17 @@ if [ ! -f "$url_list_file" ]; then
     exit 1
 fi
 
+log_path="/home/cognet/logs/CGTest19.log"
+
 # Function to fetch a URL and print the status code
 fetch_url() {
     url="$1"
     status_code=$(curl -s -o /dev/null -w "%{http_code}" --connect-timeout 10 --max-time 10 "$url")
     echo "URL: $url -> Status code: $status_code"
+    echo "URL: $url -> Status code: $status_code" >> "$log_path" || {
+        echo "Failed to write to log file: $log_path"
+        exit 1
+    }
 }
 
 # Loop through the list of URLs indefinitely
