@@ -48,6 +48,12 @@ services:
     volumes:
       - ./registro:/app/registro
     image: ddosserver:last
+
+  internet:
+    build:
+      context: ./internet
+      dockerfile: dockerfile
+    image: internet:last
   
 
   
