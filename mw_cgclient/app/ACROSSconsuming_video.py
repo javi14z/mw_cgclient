@@ -26,78 +26,84 @@ def simulate_user(video_url, duration, netlog_name):
     driver = webdriver.Chrome(executable_path="/root/chromedriver", options=options, desired_capabilities=caps, service_args=["--verbose", 
     f"--log-path=/home/cognet/logs/yt_driver.{os.path.basename(netlog_name)}.log"]) # Use the appropriate driver
 
-    # Open youtube
-    driver.get(video_url)
+    try:
+        # Open youtube
+        driver.get(video_url)
 
-    # Accept cookies
-    time.sleep(5)
-    agree_button_xpath = "//*[@id=\"content\"]/div[2]/div[6]/div[1]/ytd-button-renderer[2]/yt-button-shape/button/yt-touch-feedback-shape/div/div[2]"
-    agree_button = driver.find_element(By.XPATH, agree_button_xpath)
-    agree_button.click()
+        # Accept cookies
+        time.sleep(5)
+        agree_button_xpath = "//*[@id=\"content\"]/div[2]/div[6]/div[1]/ytd-button-renderer[2]/yt-button-shape/button/yt-touch-feedback-shape/div/div[2]"
+        agree_button = driver.find_element(By.XPATH, agree_button_xpath)
+        agree_button.click()
 
-    #Start video
-    time.sleep(5)
-    driver.find_element(By.TAG_NAME, 'body').send_keys("K")
+        #Start video
+        time.sleep(5)
+        driver.find_element(By.TAG_NAME, 'body').send_keys("K")
 
-    # Simulate the viewing for the specified duration
-    time.sleep(duration)
-    # Get the log
-    log_performance = driver.get_log('performance')
+        print("Simulating viwing...")
+        # Simulate the viewing for the specified duration
+        time.sleep(duration)
+        
+        # Get the log
+        log_performance = driver.get_log('performance')
 
-    #Save log in .json
-    with open('/home/cognet/logs/yt_netlog.' + netlog_name +'.json', 'w') as log_file:
-        for entry in log_performance:
-            log_file.write(json.dumps(entry) + '\n')
+        # last_known_url = None
+        # request_headers_data = []
+        # response_headers_data = []
 
-    # last_known_url = None
-    # request_headers_data = []
-    # response_headers_data = []
+        # for entry in log_performance:
+        #     try:
+        #         obj_serialized = entry.get("message")
+        #         obj = json.loads(obj_serialized)
+        #         message = obj.get("message")
+        #         method = message.get("method")
+        #         url = message.get("params", {}).get("documentURL")
 
-    # for entry in log_performance:
-    #     try:
-    #         obj_serialized = entry.get("message")
-    #         obj = json.loads(obj_serialized)
-    #         message = obj.get("message")
-    #         method = message.get("method")
-    #         url = message.get("params", {}).get("documentURL")
+        #         # Update last known URL if available
+        #         if url:
+        #             last_known_url = url
 
-    #         # Update last known URL if available
-    #         if url:
-    #             last_known_url = url
+        #         if method == 'Network.requestWillBeSentExtraInfo' or method == 'Network.requestWillBeSent':
+        #             try:
+        #                 request_payload = message['params'].get('request', {})
+        #                 request_headers = request_payload.get('headers', {})
+        #                 # Store request headers and last known URL in request_headers_data
+        #                 request_headers_data.append({"url": last_known_url, "headers": request_headers})
+        #             except KeyError:
+        #                 pass
 
-    #         if method == 'Network.requestWillBeSentExtraInfo' or method == 'Network.requestWillBeSent':
-    #             try:
-    #                 request_payload = message['params'].get('request', {})
-    #                 request_headers = request_payload.get('headers', {})
-    #                 # Store request headers and last known URL in request_headers_data
-    #                 request_headers_data.append({"url": last_known_url, "headers": request_headers})
-    #             except KeyError:
-    #                 pass
+        #         if method == 'Network.responseReceivedExtraInfo' or method == 'Network.responseReceived':
+        #             try:
+        #                 response_payload = message['params'].get('response', {})
+        #                 response_headers = response_payload.get('headers', {})
+        #                 # Store response headers and last known URL in response_headers_data
+        #                 response_headers_data.append({"url": last_known_url, "headers": response_headers})
+        #             except KeyError:
+        #                 pass
 
-    #         if method == 'Network.responseReceivedExtraInfo' or method == 'Network.responseReceived':
-    #             try:
-    #                 response_payload = message['params'].get('response', {})
-    #                 response_headers = response_payload.get('headers', {})
-    #                 # Store response headers and last known URL in response_headers_data
-    #                 response_headers_data.append({"url": last_known_url, "headers": response_headers})
-    #             except KeyError:
-    #                 pass
+        #         if method == 'Network.loadingFinished':
+        #             # Network request is finished, you can now access request_headers_data and response_headers_data
+        #             print("Request Headers:")
+        #             for request_data in request_headers_data:
+        #                 print("URL:", request_data["url"])
+        #                 print(request_data["headers"])
+        #             print("Response Headers:")
+        #             for response_data in response_headers_data:
+        #                 print("URL:", response_data["url"])
+        #                 print(response_data["headers"])
+        #             print('--------------------------------------')
+        #     except Exception as e:
+        #         raise e from None
+    finally:
+        print("Closing Chrome driver...")
+        # Close the driver in the finally block to ensure it is always closed
+        driver.quit()
 
-    #         if method == 'Network.loadingFinished':
-    #             # Network request is finished, you can now access request_headers_data and response_headers_data
-    #             print("Request Headers:")
-    #             for request_data in request_headers_data:
-    #                 print("URL:", request_data["url"])
-    #                 print(request_data["headers"])
-    #             print("Response Headers:")
-    #             for response_data in response_headers_data:
-    #                 print("URL:", response_data["url"])
-    #                 print(response_data["headers"])
-    #             print('--------------------------------------')
-    #     except Exception as e:
-    #         raise e from None
-
-    driver.quit()
+        print("Saving log in .json...")
+        # Save log in .json
+        with open('/home/cognet/logs/yt_netlog.' + netlog_name + '.json', 'w') as log_file:
+            for entry in log_performance:
+                log_file.write(json.dumps(entry) + '\n')
 
 #--------------------------------------------------------------------------------------------------
 

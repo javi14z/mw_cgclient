@@ -27,31 +27,36 @@ def simulate_cheetah_flow(duration, netlog_name):
     driver = webdriver.Chrome(executable_path="/root/chromedriver", options=options, desired_capabilities=caps, service_args=["--verbose", 
     f"--log-path=/home/cognet/logs/short_driver.{os.path.basename(netlog_name)}.log"]) # Use the appropriate driver
 
-    driver.get("https://www.youtube.com/shorts")
+    try:
+        driver.get("https://www.youtube.com/shorts")
 
-    # Accept cookies
-    time.sleep(5)
-    agree_button_xpath = "/html/body/c-wiz/div/div/div/div[2]/div[1]/div[3]/div[1]/form[2]/div/div/button/span"
-    agree_button = driver.find_element(By.XPATH, agree_button_xpath)
-    agree_button.click()
-    time.sleep(5)
+        # Accept cookies
+        time.sleep(5)
+        agree_button_xpath = "/html/body/c-wiz/div/div/div/div[2]/div[1]/div[3]/div[1]/form[2]/div/div/button/span"
+        agree_button = driver.find_element(By.XPATH, agree_button_xpath)
+        agree_button.click()
+        time.sleep(5)
 
-    start_time = time.time()
-    #Scroll short
-    while  time.time() - start_time < duration:
-        driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.ARROW_DOWN)
-        time.sleep(random.uniform(1.5, 5)) # Random interval between scrolls
+        print("Simulating viwing...")
+        start_time = time.time()
+        #Scroll short
+        while  time.time() - start_time < duration:
+            driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.ARROW_DOWN)
+            time.sleep(random.uniform(1.5, 5)) # Random interval between scrolls
 
         # Get the log
-    log_performance = driver.get_log('performance')
+        log_performance = driver.get_log('performance')
+    finally:
+        print("Closing Chrome driver...")
+        # Close the driver in the finally block to ensure it is always closed
+        driver.quit()
 
-    #Save log in .json
-    with open('/home/cognet/logs/short_netlog.' + netlog_name +'.json', 'w') as log_file:
-        for entry in log_performance:
-            log_file.write(json.dumps(entry) + '\n')
+        print("Saving log in .json...")
+        #Save log in .json
+        with open('/home/cognet/logs/short_netlog.' + netlog_name +'.json', 'w') as log_file:
+            for entry in log_performance:
+                log_file.write(json.dumps(entry) + '\n')
 
-
-    driver.quit()
 
 netlog_name = str(os.getpid()) + "_" + str(numpy.float64(time.time()))
 
