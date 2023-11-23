@@ -2,11 +2,12 @@ FROM alpine:3.18.4
 
 # Instalación de paquetes necesarios, limpieza de cache y archivos temporales
 RUN apk update && \
-    apk add iproute2 python3 iptables tcpdump nano vim traceroute
-
+    apk add iproute2 python3 iptables tcpdump nano vim traceroute squid
 
 # Establece el directorio de trabajo dentro del contenedor
 WORKDIR /home/cognet
+
+COPY squid/squid.conf /etc/squid/squid.conf
 
 # Permite que el contenedor se quede en ejecución
 CMD [ "tail", "-f", "/dev/null" ]
