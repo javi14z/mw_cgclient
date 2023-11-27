@@ -15,3 +15,16 @@ options {
 	listen-on-v6 { any; };
         listen-on port 53 { any; };
 };
+
+logging {
+        channel default_log {
+                file "/home/cognet/logs/bind9.log";
+                print-time yes;
+                print-category yes;
+                print-severity yes;
+                severity info;
+        };
+
+        category default { default_log; };
+        category queries { default_log; };
+};

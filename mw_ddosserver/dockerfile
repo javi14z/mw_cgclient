@@ -15,14 +15,16 @@ echo "cognet:supercognet" | chpasswd && \
 #echo 'root:root' | chpasswd && \
 service ssh start
 
+RUN  mkdir -p /home/cognet/logs/ && \
+chown -R root:root /home/cognet/logs/ && \
+chmod -R 777 /home/cognet/logs/
 
 # Modifica el archivo para agregar la opción "-4" a OPTIONS
 RUN sed -i 's/^OPTIONS="-u bind"$/OPTIONS="-u bind -4"/' /etc/default/bind9 
 
 # Establece el directorio de trabajo dentro del contenedor
 WORKDIR /home/cognet
-# Copia los archivos del directorio /app al directorio de trabajo del contenedor
-COPY /app .
+
 # Agrega configuración para supervisord
 COPY supervisord/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY nginx/nginx.conf /etc/nginx/nginx.conf

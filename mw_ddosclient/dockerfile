@@ -32,6 +32,9 @@ echo "cognet:supercognet" | chpasswd && \
 #echo 'root:root' | chpasswd && \
 service ssh start
 
+RUN  mkdir -p /home/cognet/logs/ && \
+chown -R root:root /home/cognet/logs/ && \
+chmod -R 777 /home/cognet/logs/
 
 # Establece el directorio de trabajo dentro del contenedor
 WORKDIR /home/cognet
