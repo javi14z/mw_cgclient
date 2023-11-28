@@ -1,0 +1,3 @@
+example.com
+dominio1.com
+dominio2.com

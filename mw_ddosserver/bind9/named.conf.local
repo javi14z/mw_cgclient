@@ -2,3 +2,13 @@ zone "example.com" IN {
     type master;
     file "/etc/bind/zones/db.milocal.com";
 };
+
+zone "dominio1.com" IN {
+    type master;
+    file "/etc/bind/zones/db.dominio1.com";
+};
+
+zone "dominio2.com" IN {
+    type master;
+    file "/etc/bind/zones/db.dominio2.com";
+};
