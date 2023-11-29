@@ -1,15 +1,15 @@
 #!/bin/bash
 
-# Verifica si la variable de entorno DDOS_SERVER está definida
+# Check if the DDOS_SERVER environment variable is defined
 if [ -z "$ddosserver" ]; then
-  echo "La variable de entorno DDOS_SERVER no está definida. Ejecuta export ddosserver=¨ip¨"
+  echo "An IP address was not provided for the server. Make sure to set the ddosserver environment variable. Run export ddosserver=¨ip¨"
   exit 1
 fi
 
-# Utiliza la variable de entorno DDOS_SERVER como la dirección del servidor de ataque
+# Use the DDOS_SERVER environment variable as the attack server's address
 ddosserver_ip="$ddosserver"
 
-# Verifica si se proporcionan suficientes argumentos
+# Check if enough arguments are provided
 if [ "$#" -ne 1 ]; then
   echo "Usage: $0 <duration>"
   exit 1
@@ -17,16 +17,17 @@ fi
 
 duration="$1"
 
+# Create a directory for storing Vegeta logs
 mkdir -p /home/cognet/logs/vegeta
 
-# Ejecuta la prueba de carga y guarda los resultados en results.bin
+# Run the load test and save the results in results.bin
 (echo "GET https://$ddosserver:8080" ; echo "Host: $ddosserver_ip") | vegeta attack -duration="$duration"s | tee /home/cognet/logs/vegeta/results.bin
 
-# Genera un informe JSON a partir de los resultados
+# Generate a JSON report from the results
 vegeta report -type=json /home/cognet/logs/vegeta/results.bin > /home/cognet/logs/vegeta/metrics.json
 
-# Genera un gráfico HTML a partir de los resultados
+# Generate an HTML graph from the results
 cat /home/cognet/logs/vegeta/results.bin | vegeta plot > /home/cognet/logs/vegeta/plot.html
 
-# Genera un informe de histograma a partir de los resultados
+# Generate a histogram report from the results
 cat /home/cognet/logs/vegeta/results.bin | vegeta report -type="hist[0,100ms,200ms,300ms]" > /home/cognet/logs/vegeta/histogram.txt
