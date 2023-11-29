@@ -27,8 +27,6 @@ fetch_url() {
 }
 
 # Loop through the list of URLs indefinitely
-while true; do
-    while IFS= read -r url; do
-        fetch_url "$url"
-    done < "$url_list_file"
-done
+while IFS= read -r url; do
+    fetch_url "$url"
+done < "$url_list_file"
