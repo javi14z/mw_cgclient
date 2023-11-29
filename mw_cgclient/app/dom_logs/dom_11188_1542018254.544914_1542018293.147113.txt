@@ -1,1 +1,0 @@
-#c_ip:1 s_ip:2 s_port:3 time_init:4 time_fin:5 petition_url:6 mimeType:7 url_dom:8 c_port:9

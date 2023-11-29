@@ -1,4 +1,0 @@
-#c_ip:1 s_ip:2 s_port:3 time_init:4 time_fin:5 petition_url:6 mimeType:7 url_dom:8
-172.16.1.168 216.58.210.174 443 154201830586094 1542018366191198 https://www.youtube.com/watch?v=uA48RCLNX2A text/html https://www.youtube.com/watch?v=uA48RCLNX2A 38230
-172.16.1.168 173.194.139.198 443 154201830586094 1542018366191198 https://www.youtube.com/watch?v=uA48RCLNX2A text/html https://r1---sn-h5q7knes.googlevideo.com/generate_204 44654
-172.16.1.168 173.194.139.198 443 154201830586094 1542018366191198 https://www.youtube.com/watch?v=uA48RCLNX2A text/html https://r1---sn-h5q7knes.googlevideo.com/generate_204?conn2 44656

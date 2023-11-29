@@ -1,8 +1,0 @@
-#c_ip:1 s_ip:2 s_port:3 time_init:4 time_fin:5 petition_url:6 mimeType:7 url_dom:8 c_port:9
-172.16.1.168 151.101.0.134 443 154201835680498 1542018419636838 http://disqus.com/ text/html https://disqus.com/
-172.16.1.168 104.16.80.166 443 154201835680498 1542018419636838 http://disqus.com/ application/javascript https://c.disquscdn.com/next/current/marketing/js/entry.js 43890
-172.16.1.168 151.101.0.134 443 154201835680498 1542018419636838 http://disqus.com/ application/json https://disqus.com/next/config.json 45146
-172.16.1.168 104.16.80.166 443 154201835680498 1542018419636838 http://disqus.com/ application/javascript https://c.disquscdn.com/next/marketing/js/0.dab2d495ceda361aceea.js
-172.16.1.168 104.16.80.166 443 154201835680498 1542018419636838 http://disqus.com/ text/css https://c.disquscdn.com/next/39cc722/marketing/css/main.css 43940
-172.16.1.168 104.16.80.166 443 154201835680498 1542018419636838 http://disqus.com/ application/octet-stream https://c.disquscdn.com/next/39cc722/marketing/assets/fonts/icons.woff2
-172.16.1.168 104.17.135.180 443 154201835680498 1542018419636838 http://disqus.com/ application/rss+xml https://blog.disqus.com/rss.xml 38236
