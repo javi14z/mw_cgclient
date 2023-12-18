@@ -45,11 +45,13 @@ COPY --from=build /usr/bin/vegeta /usr/bin/vegeta
 COPY --from=build /root /home/cognet
 # Agrega configuración para supervisord
 COPY supervisord/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+COPY certs/ /usr/local/share/ca-certificates/
 
 #Configurar el display
 ENV DISPLAY=host.docker.internal:0.0
 RUN echo 'X11Forwarding yes' >> /etc/ssh/sshd_config
 
+RUN update-ca-certificates
 
 # Inicia supervisord en primer plano para evitar cierre de contenedor
 CMD ["/usr/bin/supervisord", "-n", "-c", "/etc/supervisor/conf.d/supervisord.conf"]

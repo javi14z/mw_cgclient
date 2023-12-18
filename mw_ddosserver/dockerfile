@@ -1,8 +1,11 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
+
+
+ENV DEBIAN_FRONTEND=noninteractive
 
 # Instalación de paquetes necesarios, limpieza de cache y archivos temporales
 RUN apt-get update && \
-    apt-get install -y python3 nano net-tools openssh-server sudo supervisor nginx tcpdump bind9 bind9utils bind9-doc iputils-ping \
+    apt-get install -y python3 nano net-tools openssh-server sudo supervisor nginx tcpdump bind9 bind9utils bind9-doc iputils-ping dnsdist\
     iproute2 traceroute && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
@@ -20,16 +23,20 @@ chown -R root:root /home/cognet/logs/ && \
 chmod -R 777 /home/cognet/logs/
 
 # Modifica el archivo para agregar la opción "-4" a OPTIONS
-RUN sed -i 's/^OPTIONS="-u bind"$/OPTIONS="-u bind -4"/' /etc/default/bind9 
+RUN sed -i 's/^OPTIONS="-u bind"$/OPTIONS="-u bind -4"/' /etc/default/named
 
 # Establece el directorio de trabajo dentro del contenedor
 WORKDIR /home/cognet
+
+#RUN openssl req -x509 -newkey rsa:2048 -keyout doh-key.pem -out doh-cert.pem -days 365 -subj '/CN=172.21.0.6' -addext 'subjectAltName = IP:172.21.0.6' -nodes
 
 # Agrega configuración para supervisord
 COPY supervisord/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY nginx/nginx.conf /etc/nginx/nginx.conf
 COPY nginx/html /home/cognet/
 COPY bind9/ /etc/bind/
+COPY dnsdist/ /etc/dnsdist/
+COPY certs/ /etc/ssl/certs/
 
 # Inicia supervisord en primer plano para evitar cierre de contenedor
 CMD ["/usr/bin/supervisord", "-n", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
