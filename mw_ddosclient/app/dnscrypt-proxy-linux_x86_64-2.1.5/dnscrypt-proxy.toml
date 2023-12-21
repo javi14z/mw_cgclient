@@ -700,16 +700,16 @@ format = 'tsv'
 ## The minimum delay of 24 hours (1 day) avoids unnecessary requests to servers.
 ## The maximum delay of 168 hours (1 week) ensures cache freshness.
 
-[sources]
+#[sources]
 
   ### An example of a remote source from https://github.com/DNSCrypt/dnscrypt-resolvers
 
-  [sources.public-resolvers]
-    urls = ['https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v3/public-resolvers.md', 'https://download.dnscrypt.info/resolvers-list/v3/public-resolvers.md']
-    cache_file = 'public-resolvers.md'
-    minisign_key = 'RWQf6LRCGA9i53mlYecO4IzT51TGPpvWucNSCh1CBM0QTaLn73Y7GFO3'
-    refresh_delay = 72
-    prefix = ''
+  #[sources.public-resolvers]
+   # urls = ['https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v3/public-resolvers.md', 'https://download.dnscrypt.info/resolvers-list/v3/public-resolvers.md']
+   # cache_file = 'public-resolvers.md'
+   # minisign_key = 'RWQf6LRCGA9i53mlYecO4IzT51TGPpvWucNSCh1CBM0QTaLn73Y7GFO3'
+   # refresh_delay = 72
+   # prefix = ''
 
   ### Anonymized DNS relays
 
