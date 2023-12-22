@@ -43,4 +43,12 @@ services:
       - "53:53/udp" #bind9 (DNS)
     image: ddosserver:last
 
+  internet:
+    build:
+      context: ./internet
+      dockerfile: dockerfile
+    image: internet:last
+
+  
+
   
